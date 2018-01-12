@@ -26,7 +26,6 @@ public class JdongMain {
     public static void main(String[] args) throws Exception {
         //初始化一个httpClient
         HttpClient client = new CloseableHttpClient() {
-
             @Override
             protected CloseableHttpResponse doExecute(HttpHost httpHost, HttpRequest httpRequest, HttpContext httpContext) throws IOException, ClientProtocolException {
                 return null;

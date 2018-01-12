@@ -1,5 +1,7 @@
 package HashMap;
 
+import com.google.common.base.Joiner;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,11 +19,8 @@ public class PrintHashMap {
 
     public static String toString(Map<Integer, String> map) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (Map.Entry m : map.entrySet()) {
-            String string = "[" + m.getValue() + ":" + m.getKey() + "]";
-            stringBuilder.append(string);
-        }
-        return "{" + stringBuilder.toString() + "}";
+        stringBuilder.append("{").append(Joiner.on(";").withKeyValueSeparator("=").join(map)).append("}");
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
