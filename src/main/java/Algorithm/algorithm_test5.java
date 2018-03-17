@@ -14,13 +14,14 @@ public class algorithm_test5 {
     }
 
     public int pop() {
-        while (!stack1.empty()) {
-            stack2.push(stack1.pop());
+        if (stack1.empty()&&stack2.empty()){
+            throw new RuntimeException("Queue is empty!");
         }
-        int x = stack2.pop();
-        while (!stack2.empty()) {
-            stack1.push(stack2.pop());
+        if (stack2.empty()){
+            while (!stack1.empty()){
+                stack2.push(stack1.pop());
+            }
         }
-        return x;
+        return stack2.pop();
     }
 }
