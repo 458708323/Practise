@@ -5,7 +5,30 @@ package Algorithm;
  * 输入一个非递减排序的数组的一个旋转，输出旋转数组的最小元素。
  * 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
  * NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
+ * 非递减排序：1,2,2,3,4,5,6
+ */
+
+/**
+ * 待review
  */
 public class algorithm_test6 {
+    public int minNumberInRotateArray(int[] array) {
+        if (array.length == 0) {
+            return 0;
+        }
+        int type = array[0];
+        for (int i : array) {
+            if (i < type) {
+                type = i;
+                break;
+            }
+        }
+        return type;
+    }
 
+    public static void main(String[] args) {
+        int[] array = new int[]{3, 4, 5, 1, 2, 2};
+        algorithm_test6 test6 = new algorithm_test6();
+        System.out.println(test6.minNumberInRotateArray(array));
+    }
 }
